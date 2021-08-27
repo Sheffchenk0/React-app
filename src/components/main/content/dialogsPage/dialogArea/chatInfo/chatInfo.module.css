@@ -1,0 +1,23 @@
+/* chatInfo */
+
+.chatInfo {
+    background-color: #fff;
+    width: 100%;
+    z-index: 1;
+    height: 50px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.tools {
+    margin-left: auto;
+}
+
+.find {
+    width: 20px;
+    fill: rgb(87, 136, 200);
+    cursor: pointer;
+}

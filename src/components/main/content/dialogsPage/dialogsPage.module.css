@@ -1,0 +1,137 @@
+.dialogsPage {
+    margin-left: 10px;
+    width: 100%;
+    max-height: calc(100vh - 75px);
+    height: 1000px;
+    display: flex;
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    width: 289px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    border-right: 1px solid rgb(202, 202, 202);
+}
+
+
+/* SearchPanel */
+
+.searchPanel {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    z-index: 1;
+    width: inherit;
+    height: 50px;
+    position: fixed;
+    border-right: 1px solid rgb(202, 202, 202);
+    padding: 0px 10px;
+    position: relative;
+    border-top-left-radius: 8px;
+}
+
+.searchPanel svg {
+    position: absolute;
+    width: 15px;
+    fill: rgb(200, 200, 200);
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search {
+    border: none;
+    width: 100%;
+    padding: 8px 8px 8px 34px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+    display: flex;
+}
+
+.search:focus {
+    outline: none;
+}
+
+
+/* Dialogs */
+
+.dialogs {
+    overflow-y: auto;
+    width: 100%;
+    height: calc(100% - 50px);
+}
+
+.dialogs::-webkit-scrollbar {
+    width: 10px;
+}
+
+.dialogs::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.dialogs::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 16px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+.dialogs::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}
+
+
+/* Dialog */
+
+.dialog {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 65px;
+    padding: 0px 10px;
+    border-right: none;
+    border-left: none;
+    cursor: pointer;
+}
+
+.dialog:hover {
+    background-color: rgba(168, 168, 168, 0.267);
+}
+
+.dialog.active {
+    background-color: rgb(129, 171, 226);
+    color: #fff;
+}
+
+.dialog.active .lastMessage {
+    color: #fff;
+}
+
+.dialog img {
+    width: 47px;
+    height: 47px;
+    border-radius: 100%;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 6px;
+    padding: 10px;
+}
+
+.fullname {
+    font-size: 18px;
+}
+
+.lastMessage {
+    margin-top: 7px;
+    font-size: 15px;
+    color: #626d7a;
+}

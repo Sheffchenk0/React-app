@@ -1,0 +1,41 @@
+/* -> -> Profile */
+
+.profile {
+    display: flex;
+    width: 100%;
+    background: #fafafa;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.1);
+    box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.1);
+    padding: 25px;
+}
+
+.img {
+    width: 250px;
+    height: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: rgb(155, 155, 155);
+}
+
+.profileInfo {
+    margin-left: 25px;
+}
+
+.fullname {
+    display: flex;
+    font-size: 26px;
+}
+
+.status {
+    margin-top: 5px;
+}
+
+.city {
+    margin-top: 20px;
+}
+
+.dateOfBirth {
+    margin-top: 5px;
+}

@@ -1,0 +1,23 @@
+/* -> Sidebar */
+
+.sidebar {
+    width: 154px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item {
+    font-size: 19px;
+    width: 100%;
+    padding: 8px 13px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.item:hover {
+    background-color: rgba(177, 177, 177, 0.212);
+}
