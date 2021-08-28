@@ -1,0 +1,26 @@
+/* Dialogs */
+
+.dialogs {
+    overflow-y: auto;
+    width: 100%;
+    height: calc(100% - 50px);
+}
+
+.dialogs::-webkit-scrollbar {
+    width: 10px;
+}
+
+.dialogs::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.dialogs::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 16px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+.dialogs::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}

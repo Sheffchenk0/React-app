@@ -6,71 +6,9 @@
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     border-radius: 8px;
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
-}
-
-
-/* InputPanel */
-
-.inputPanel {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 8px 13px;
-}
-
-.attachments {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 28px;
-    height: 28px;
-    border: 2px solid rgb(87, 136, 200);
-    border-radius: 100%;
     position: relative;
-}
-
-.attachments::after {
-    content: "";
-    position: absolute;
-    width: 12px;
-    height: 2px;
-    background-color: rgb(87, 136, 200);
-    transform: rotate(90deg);
-}
-
-.attachments::before {
-    content: "";
-    position: absolute;
-    width: 12px;
-    height: 2px;
-    background-color: rgb(87, 136, 200);
-}
-
-.input {
-    display: flex;
-    flex: 1 0 auto;
-    margin-left: 10px;
-    border: none;
-    resize: none;
-}
-
-.input:focus {
-    outline: none;
-}
-
-.sendButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    padding: 5px 0px 5px 12px;
-}
-
-.sendButton svg {
-    fill: rgb(87, 136, 200);
-    width: 23px;
-    height: 23px;
 }

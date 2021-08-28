@@ -5,7 +5,40 @@ import Message from './message/message';
 export default function messages(props) {
     return (
         <div className={styles.messages}>     
-        <Message />              
+            <Message isOwn="1"/>    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message isOwn="1"/>    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />    
+            <Message />
         </div>
     );
 }

@@ -1,0 +1,11 @@
+/* Sidebar */
+
+.sidebar {
+    width: 289px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    border-right: 1px solid rgb(202, 202, 202);
+}

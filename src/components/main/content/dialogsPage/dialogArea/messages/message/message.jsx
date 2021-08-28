@@ -2,8 +2,12 @@ import React from 'react';
 import styles from './message.module.css';
 
 export default function message(props) {
+    let owner = '';
+    if(props.isOwn == 1){
+        owner = ' ' + styles.own;
+    }
     return(
-        <div className={`${styles.message} ${styles.own}`}>
+        <div className={styles.message + owner}>
             <div className={styles.image}>
                 <img
                     src="https://thumbs.dreamstime.com/b/animals-farm-imaga-cows-57225867.jpg"
