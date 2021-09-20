@@ -2,13 +2,13 @@ import React from 'react';
 import Post from './post/post'
 import styles from './posts.module.css';
 
-
-export default function Posts(){
+export default function Posts(props){
+    let posts = props.posts.map(element=>{
+        return <Post id={element.postId} text={element.postText} />
+    });
     return (
     <div className={styles.posts}>
-        <Post message="Hi"/>
-        <Post message="123"/>
-        <Post message="lorem5"/>
+        {posts}
     </div>
     )
 }

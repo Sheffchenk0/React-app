@@ -1,0 +1,19 @@
+.showMoreButtonWrapper {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.showMoreButton {
+    width: 150px;
+    height: 50px;
+    background-color: rgb(123, 161, 212);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}

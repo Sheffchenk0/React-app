@@ -3,11 +3,11 @@ import styles from './dialogsPage.module.css';
 import DialogArea from './dialogArea/dialogArea';
 import Sidebar from './sidebar/sidebar';
 
-export default ()=>{
+export default (props)=>{
     return(
         <div className={styles.dialogsPage}>
-            <Sidebar /> 
-            <DialogArea />
+            <Sidebar callbacks={props.sidebarCB} state={props.sidebar}/> 
+            <DialogArea callbacks={props.dialogAreaCB} state={props.dialogArea}/>
         </div>
 
     );

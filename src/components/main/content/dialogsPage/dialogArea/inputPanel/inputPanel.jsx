@@ -2,15 +2,24 @@ import React from "react";
 import styles from "./inputPanel.module.css";
 
 export default (props) => {
+    let onAddMessage = ()=>{
+        props.callbacks.addMessage();
+    }
+    let onUpdateInputValue = (event)=>{
+        props.callbacks.updateInputValue(event.target.value);
+    }
     return (
         <div className={styles.inputPanel}>
             <div className={styles.attachments}></div>
             <textarea
+                value={props.inputValue}
+                onChange={onUpdateInputValue}
                 rows="1"
                 className={styles.input}
                 placeholder="Write an message..."
+                id="newMessageTextarea"
             />
-            <div className={styles.sendButton}>
+            <div onClick={onAddMessage} className={styles.sendButton}>
                 <svg viewBox="0 0 512 512">
                     <path
                         d="M481.508,210.336L68.414,38.926c-17.403-7.222-37.064-4.045-51.309,8.287C2.86,59.547-3.098,78.551,1.558,96.808

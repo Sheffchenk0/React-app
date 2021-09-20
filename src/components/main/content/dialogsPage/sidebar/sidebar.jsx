@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./sidebar.module.css";
-import SeacrhPanel from "./searchPanel/seacrhPanel";
 import Dialogs from "./dialogs/Dialogs";
+import SeacrhPanel from "./searchPanel/seacrhPanel";
 
 export default (props) => {
     return (
-        <div className={styles.sidebar}>
-            <SeacrhPanel /> 
-            <Dialogs />           
-        </div>
+            <div className={styles.sidebar}>                
+                <SeacrhPanel searchDialogValue={props.state.searchDialogValue} updateSearchDialogValue={props.callbacks.updateSearchDialogValue}/>
+                <Dialogs searchDialogValue={props.state.searchDialogValue} dialogs={props.state.dialogs} updateCurrentDialogId={props.callbacks.updateCurrentDialogId}/>
+            </div>
     );
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './post.module.css';
 
-
 export default function Posts(props){
     return (
         <div className={styles.post}>
@@ -9,7 +8,7 @@ export default function Posts(props){
                 <img src="" alt=""/>
             </div>
             <div className={styles.content}>
-                <div className={styles.text}>{props.message}</div>
+                <div className={styles.text}>{props.text}</div>
             </div>
         </div>   
     )

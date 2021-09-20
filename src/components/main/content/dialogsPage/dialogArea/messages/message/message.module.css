@@ -44,16 +44,17 @@
 }
 
 .triangle {
-    margin-left: -40px;
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
+    margin-left: -10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 42px;
     border-top-right-radius: 0px;
     box-shadow: 20px 0px 0 0px rgb(236, 236, 236);
     align-self: flex-end;
 }
 
 .wrapper {
+    margin-left: 10px;
     border-radius: 10px;
     max-width: 400px;
     padding: 10px 10px;

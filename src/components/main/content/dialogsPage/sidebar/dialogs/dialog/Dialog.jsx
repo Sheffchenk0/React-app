@@ -1,14 +1,13 @@
 import React from "react";
 import styles from "./dialog.module.css";
+import { NavLink } from "react-router-dom";
 
 export default (props) => {
-    let active = '';
-    console.log(props);
-    if(props.isActive){
-        active = ' ' + styles.active;
+    let onUpdateCurrentDialogId = ()=>{
+        props.updateCurrentDialogId(props.dialog.userId);
     }
     return (
-        <div className={styles.dialog + active}>
+        <NavLink onClick={onUpdateCurrentDialogId} className={styles.dialog} activeClassName={styles.active} to={"/dialogs/" + props.dialog.userId}>
             <img
                 src="https://bigpicture.ru/wp-content/uploads/2015/11/nophotoshop29-800x532.jpg"
                 alt=""
@@ -16,9 +15,9 @@ export default (props) => {
             />
 
             <div className={styles.info}>
-                <div className={styles.fullname}>Nikita Shevchenko</div>
+                <div className={styles.fullname}>{props.dialog.fullname}</div>
                 <div className={styles.lastMessage}>Lorem ipsum dolor sit.</div>
             </div>
-        </div>
+        </NavLink>
     );
 };

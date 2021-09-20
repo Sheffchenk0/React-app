@@ -1,7 +1,7 @@
 /* -> -> Posts */
 
 .posts {
-    margin-top: 15px;
+    margin: 15px 0;
     display: flex;
     flex-direction: column;
     width: 100%;

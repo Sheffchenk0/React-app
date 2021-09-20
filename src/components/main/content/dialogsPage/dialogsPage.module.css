@@ -1,6 +1,5 @@
 .dialogsPage {
-    margin-left: 10px;
-    width: 100%;
+    width: 1036px;
     max-height: calc(100vh - 75px);
     height: 1000px;
     display: flex;

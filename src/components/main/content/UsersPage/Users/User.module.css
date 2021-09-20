@@ -1,0 +1,11 @@
+.users {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.selected {
+    font-weight: 900;
+    color: cyan;
+    font-size: 25px;
+}

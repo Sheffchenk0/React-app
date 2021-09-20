@@ -3,42 +3,14 @@ import styles from "./messages.module.css";
 import Message from './message/message';
 
 export default function messages(props) {
+    let sorted = [...props.messages];
+    sorted = sorted.reverse((a,b)=>a-b);
+    let messages = sorted.map(element=>{
+        return <Message message={element}/>    
+    });
     return (
-        <div className={styles.messages}>     
-            <Message isOwn="1"/>    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message isOwn="1"/>    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />    
-            <Message />
+        <div className={styles.messages}>    
+            {messages}
         </div>
     );
 }
