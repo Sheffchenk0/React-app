@@ -39,3 +39,9 @@
 .dateOfBirth {
     margin-top: 5px;
 }
+
+.status {
+    min-width: 10px;
+    min-height: 10px;
+    background-color: rgb(189, 189, 189);
+}

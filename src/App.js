@@ -1,19 +1,34 @@
+import React from 'react';
 import logo from "./logo.svg";
 import "./normalize.css";
 import "./App.css";
-import Header from "./components/header/header";
 import Main from "./components/main/main";
-import { BrowserRouter } from "react-router-dom";
+import HeaderContainer from "./components/header/HeaderContainer";
+import { connect } from "react-redux";
+import { setReady } from "./redux/authReducer";
+import Preloader from './components/common/Preloader';
 
-function App(props) {
+class App extends React.Component {
+  componentDidMount(){    
+    this.props.setReady();
+  }
+
+  render() {
+    if(!this.props.isReady){
+      console.log(1323);
+      return(<Preloader />)
+    }
     return (
-      <BrowserRouter>
         <div className="container">
-                <Header />
-                <Main/>
+          <HeaderContainer />
+          <Main />
         </div>
-      </BrowserRouter>
     );
+  }
 }
 
-export default App;
+let mapStateToProps = (state) => ({
+  isReady: state.auth.isReady,
+});
+
+export default connect(mapStateToProps, {setReady})(App);

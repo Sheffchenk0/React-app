@@ -3,10 +3,10 @@ import styles from "./newPost.module.css";
 
 export default function newPost(props) {
   let onAddPost = () => {
-    props.callbacks.addPost();
+    props.addPost();
   };
   let onUpdateTextareaValue = (event) => {
-    props.callbacks.updateTextareaValue(event.target.value);
+    props.updateTextareaValue(event.target.value);
   };
   return (
     <div className={styles.newPost}>

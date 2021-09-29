@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { followAC, setCurrentPageAC, setStateAC, unfollowAC } from '../../../../redux/usersPageReducer';
+import { compose } from 'redux';
+import { withAuthRedirect } from '../../../../hoc/RedirectAuth';
+import { follow, getPage, setCurrentPage, setState, toggleDisabled, togglePreloader, unfollow } from '../../../../redux/usersPageReducer';
 import UsersPage from './UsersPage';
 
 let mapStateToProps = (state) => {
@@ -10,26 +12,21 @@ let mapStateToProps = (state) => {
             totalUsersCount: state.usersPage.totalUsersCount,
             pageSize: state.usersPage.pageSize,
             currentPage: state.usersPage.currentPage,
+            isFetching: state.usersPage.isFetching,
+            disabled: state.usersPage.disabled,
         },
     };
 };
-let mapDispatchToProps = (dispatch) => {
-    return {
-        usersCB: {
-            unfollow: (userId) => {
-                dispatch(unfollowAC(userId));
-            },
-            follow: (userId) => {
-                dispatch(followAC(userId));
-            },
-            setState: (users, count) => {
-                dispatch(setStateAC(users, count));
-            },
-            setCurrentPage: (event) => {
-                dispatch(setCurrentPageAC(event.target.dataset.id));
-            }
-        }
-    }
+let mapDispatchToProps = {
+    follow,
+    setCurrentPage,
+    setState,
+    togglePreloader,
+    unfollow,
+    toggleDisabled,
+    getPage,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersPage);
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps)
+)(UsersPage);

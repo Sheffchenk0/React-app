@@ -26,3 +26,9 @@
     font-size: 23px;
     color: #fff;
 }
+
+.logout {
+    margin-left: auto;
+    color: wheat;
+    cursor: pointer;
+}

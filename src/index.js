@@ -6,13 +6,16 @@ import reportWebVitals from './reportWebVitals';
 import store from './redux/redux-store';
 import { addMessageAC } from './redux/dialogsPageReducer';
 import {Provider} from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 let rerender = (store) => {
   ReactDOM.render(
     
     <React.StrictMode>
-      <Provider store={store}> 
-        <App/>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App/>
+        </BrowserRouter>
       </Provider>
     </React.StrictMode>,
     document.getElementById("root")

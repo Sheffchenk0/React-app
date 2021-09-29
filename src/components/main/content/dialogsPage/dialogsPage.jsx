@@ -2,13 +2,21 @@ import React from 'react';
 import styles from './dialogsPage.module.css';
 import DialogArea from './dialogArea/dialogArea';
 import Sidebar from './sidebar/sidebar';
+import { Redirect } from 'react-router';
+import { withAuthRedirect } from '../../../../hoc/RedirectAuth';
+import { compose } from 'redux';
 
-export default (props)=>{
-    return(
-        <div className={styles.dialogsPage}>
-            <Sidebar callbacks={props.sidebarCB} state={props.sidebar}/> 
-            <DialogArea callbacks={props.dialogAreaCB} state={props.dialogArea}/>
-        </div>
-
-    );
+class DialogsPage extends React.Component{
+    render(){
+        return(
+            <div className={styles.dialogsPage}>
+                <Sidebar callbacks={this.props.sidebarCB} state={this.props.sidebar}/> 
+                <DialogArea callbacks={this.props.dialogAreaCB} state={this.props.dialogArea}/>
+            </div>
+        );
+    }
 }
+
+export default compose(
+    withAuthRedirect
+)(DialogsPage);

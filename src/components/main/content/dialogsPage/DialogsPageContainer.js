@@ -14,6 +14,7 @@ let mapStateToProps = (state) => {
             inputValue: state.dialogsPage.inputValue,
             currentDialogId: state.dialogsPage.currentDialogId,
         },
+        isAuth: state.auth.isAuth,
     };
 };
 let mapDispatchToProps = (dispatch) => {
