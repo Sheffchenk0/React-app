@@ -1,6 +1,5 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import Profile from './profile/profile'
-import NewPostContainer from './newPost/newPostContainer';
 import Posts from './posts/posts';
 import styles from './profilePage.module.css';
 import NewPost from './newPost/newPost';
@@ -16,7 +15,12 @@ export default function ProfilePage(props){
                         <Profile 
                         profile={props.profile}
                         status={props.status}
-                        setStatus={props.setStatus}/>
+                        setStatus={props.setStatus}
+                        updateStatus={props.updateStatus}
+                        isOwner={props.isOwner}
+                        savePhoto={props.savePhoto}                        
+                        saveProfile={props.saveProfile}
+                        />
 
                         <NewPost            
                         textareaValue={props.textareaValue}

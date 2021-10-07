@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./dialogs.module.css";
 import Dialog from './dialog/Dialog';
 
-export default (props) => {
+const Dialogs = (props) => {
     let dialogsElements = [];
     props.dialogs.forEach(element => {
         let names = element.fullname.split(' ');
@@ -16,7 +16,7 @@ export default (props) => {
             }
         });    
         if(props.searchDialogValue==='' || includes){
-            dialogsElements.push(<Dialog updateCurrentDialogId={props.updateCurrentDialogId} dialog={element}/>)
+            dialogsElements.push(<Dialog key={element.userId} updateCurrentDialogId={props.updateCurrentDialogId} dialog={element}/>)
         }
     });
     return (
@@ -26,3 +26,4 @@ export default (props) => {
         </div>
     );
 };
+export default Dialogs;

@@ -3,10 +3,6 @@ import styles from './User.module.css';
 import { NavLink } from "react-router-dom";
 
 class User extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     onChangeFollow = () => {
         if (this.props.followed) {
             this.props.unfollow(this.props.id);
@@ -18,7 +14,7 @@ class User extends React.Component {
         return (
                 <div className={styles.user} >
                     <div className={styles.image}>
-                        <img src={this.props.photos.large} alt="" srcset="" />
+                        <img src={this.props.photos.large} alt="" srcSet="" />
                     </div>
                     <NavLink className={styles.info} to={"/profile/" + this.props.id}>
                         <div className={styles.fullname}>{this.props.name}</div>

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./chatInfo.module.css";
 
-export default function (props) {
+const ChatInfo = (props) => {
     return (
         <div id="chatInfo" className={styles.chatInfo}>
             <div className={styles.fullname}>Nikita Shevchenko</div>
@@ -20,3 +20,5 @@ M202.667,362.669c-88.235,0-160-71.765-160-160s71.765-160,160-160s160,71.765,160,
         </div>
     );
 }
+
+export default ChatInfo;

@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./sidebar.module.css";
 import Dialogs from "./dialogs/Dialogs";
-import SeacrhPanel from "./searchPanel/seacrhPanel";
+import SeacrhPanel from "./searchPanel/SearchPanel";
 
-export default (props) => {
+const Sidebar = (props) => {
     return (
             <div className={styles.sidebar}>                
                 <SeacrhPanel searchDialogValue={props.state.searchDialogValue} updateSearchDialogValue={props.callbacks.updateSearchDialogValue}/>
@@ -11,3 +11,4 @@ export default (props) => {
             </div>
     );
 };
+export default Sidebar;

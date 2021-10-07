@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './dialogsPage.module.css';
 import DialogArea from './dialogArea/dialogArea';
 import Sidebar from './sidebar/sidebar';
-import { Redirect } from 'react-router';
 import { withAuthRedirect } from '../../../../hoc/RedirectAuth';
 import { compose } from 'redux';
 

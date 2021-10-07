@@ -1,14 +1,8 @@
 import React from 'react';
-import * as axios from 'axios';
 import Users from './Users';
 import Preloader from '../../../../common/Preloader';
-import { UsersAPI } from '../../../../../api/api';
-import { withAuthRedirect } from '../../../../../hoc/RedirectAuth';
 
-class UsersContainer extends React.Component {
-    constructor(props){
-        super(props);
-    };
+class UsersContainer extends React.Component {    
     componentDidMount(){
         this.props.getPage(this.props.state.currentPage, this.props.state.pageSize);
     }

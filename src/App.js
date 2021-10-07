@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from "./logo.svg";
 import "./normalize.css";
 import "./App.css";
 import Main from "./components/main/main";
@@ -15,7 +14,6 @@ class App extends React.Component {
 
   render() {
     if(!this.props.isReady){
-      console.log(1323);
       return(<Preloader />)
     }
     return (

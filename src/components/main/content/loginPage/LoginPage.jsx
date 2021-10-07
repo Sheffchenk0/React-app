@@ -3,11 +3,9 @@ import {useForm} from 'react-hook-form';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import { auth } from '../../../../redux/authReducer';
-import { setState } from '../../../../redux/usersPageReducer';
 
 let LoginPage = (props) => {
-    console.log(11111111);
-    let {register, handleSubmit, watch} = useForm();
+    let {register, handleSubmit} = useForm();
     let onSubmit = data => {
         props.auth(data.email, data.password, data.rememberMe);
     };

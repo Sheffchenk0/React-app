@@ -7,16 +7,7 @@ class UsersPage extends React.Component {
   render() {
     return (
       <div className={styles.usersPage}>
-        <UsersContainer
-            state={this.props.usersState}
-            follow={this.props.follow}
-            setCurrentPage={this.props.setCurrentPage}
-            setState={this.props.setState}
-            togglePreloader={this.props.togglePreloader}
-            unfollow={this.props.unfollow}
-            toggleDisabled={this.props.toggleDisabled}
-            getPage={this.props.getPage}
-        />
+        <UsersContainer {...this.props}/>
         <ShowMoreButton />
       </div>
     );

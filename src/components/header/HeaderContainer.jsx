@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
-import {login, logout} from '../../redux/authReducer';
+import { logout } from '../../redux/authReducer';
 import Header from './header';
 
 class HeaderPageContainer extends React.Component{

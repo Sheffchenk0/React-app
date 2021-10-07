@@ -5,7 +5,7 @@ let instance = axios.create({
     withCredentials: true,
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
     headers:{
-        'API-KEY': 'de8477f7-9eb6-4c67-a023-a37f1bda63ff',
+        'API-KEY': '0edfcba0-783f-458f-bf9f-9ac3e936de1e',
     },
 });
 
@@ -39,6 +39,37 @@ export const ProfileAPI = {
     },
     setStatus(status){
         return instance.put(`profile/status/`, {status});
+    },
+    setPhoto(file){
+        let formData = new FormData();
+        formData.append("image", file);
+        return instance.put(`profile/photo/`, formData)
+                .then(response => response.data);
+    },
+    setProfile(data, userId){
+        const formatData = {
+            userId,
+            fullName: data.fullname,
+            lookingForAJob: data.lookingForAJob || false,
+            lookingForAJobDescription: data.lookingForAJobDescription || null,
+            contacts: {
+                github: null,
+                vk: null,
+                facebook: null,
+                instagram: null,
+                twitter: null,
+                website: null,
+                youtube: null,
+                mainLink: null,
+            },
+            aboutMe: 'nikita',
+        };  
+        debugger;
+        return instance.put(`profile/`, formatData)
+                .then(response => {
+                    console.log(response);
+                    return response.data;
+                });
     },
 }
 

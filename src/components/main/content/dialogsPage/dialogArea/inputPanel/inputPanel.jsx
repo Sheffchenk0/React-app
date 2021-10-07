@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./inputPanel.module.css";
 
-export default (props) => {
+const InputPanel = (props) => {
     let onAddMessage = ()=>{
         props.callbacks.addMessage();
     }
@@ -32,3 +32,4 @@ C500.317,293.862,512,276.364,512,256.001C512,235.638,500.317,218.139,481.508,210
         </div>
     );
 };
+export default InputPanel;

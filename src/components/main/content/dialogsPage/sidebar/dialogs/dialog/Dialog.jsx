@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./dialog.module.css";
 import { NavLink } from "react-router-dom";
 
-export default (props) => {
+const Dialog = (props) => {
     let onUpdateCurrentDialogId = ()=>{
         props.updateCurrentDialogId(props.dialog.userId);
     }
@@ -11,7 +11,7 @@ export default (props) => {
             <img
                 src="https://bigpicture.ru/wp-content/uploads/2015/11/nophotoshop29-800x532.jpg"
                 alt=""
-                srcset=""
+                srcSet=""
             />
 
             <div className={styles.info}>
@@ -21,3 +21,4 @@ export default (props) => {
         </NavLink>
     );
 };
+export default Dialog;

@@ -1,44 +1,49 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { addPost, updateTextareaValue, togglePreloader, setProfile, getStatus, setStatus } from '../../../../redux/profilePageReducer';
-import ProfilePage from './profilePage';
-import { Redirect, withRouter } from 'react-router';
-import { getAuthUserId, getIsFetching, getPosts, getProfile, getTextareaValue } from '../../../../redux/profilePageSelector';
+import React from "react";
+import { connect } from "react-redux";
+import {
+    addPost,
+    updateTextareaValue,
+    togglePreloader,
+    setProfile,
+    queryStatus,
+    setStatus,
+    updateStatus,
+    savePhoto,
+    saveProfile,
+} from "../../../../redux/profilePageReducer";
+import ProfilePage from "./profilePage";
+import { Redirect, withRouter } from "react-router";
+import {
+    getAuthUserId,
+    getIsFetching,
+    getPosts,
+    getStatus,
+    getProfile,
+    getTextareaValue,
+} from "../../../../redux/profilePageSelector";
+import { useEffect } from "react";
 
-class ProfilePageContainer extends React.Component{
-    componentDidMount(){
-        let userId = this.props.match.params.userId;
-        if(!userId){
-            userId = this.props.authUserId;
-            if(!userId){
-                this.redirect = true;
+const ProfilePageContainer = (props) => {
+    let userId;
+    useEffect(() => {
+        let userId = props.match.params.userId;
+        if (!userId) {
+            userId = props.authUserId;
+            if (!userId) {
                 return;
             }
         }
-        this.props.setProfile(userId);
-        this.props.getStatus(userId);
-    }
-    
-    componentDidUpdate(){
-        if(!this.props.match.params.userId){            
-            this.userId = this.props.authUserId;
-            if(!this.userId){
-                this.redirect = true;
-                return;
-            }
+        props.setProfile(userId);
+        props.queryStatus(userId);
+    }, [props.match.params.userId, props.authUserId]);
+
+    if (!props.match.params.userId) {
+        userId = props.authUserId;
+        if (!userId) {
+            return <Redirect to="/login" />;
         }
     }
-
-    render(){
-        if(this.redirect){
-            return(
-            <Redirect to="/dialogs"/>
-            )
-            }
-        return(
-            <ProfilePage {...this.props}/>
-        );
-    }
+    return <ProfilePage {...props} isOwner={!props.match.params.userId}/>;
 }
 
 let mapStateToProps = (state) => {
@@ -47,7 +52,7 @@ let mapStateToProps = (state) => {
         posts: getPosts(state),
         textareaValue: getTextareaValue(state),
         isFetching: getIsFetching(state),
-        status: getStatus(state),       
+        status: getStatus(state),
         authUserId: getAuthUserId(state),
     };
 };
@@ -57,11 +62,16 @@ let mapDispatchToProps = {
     updateTextareaValue,
     togglePreloader,
     setProfile,
-    getStatus,
+    queryStatus,
     setStatus,
+    updateStatus,
+    savePhoto,
+    saveProfile,
 };
-
 
 let withRouterComponent = withRouter(ProfilePageContainer);
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouterComponent);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(withRouterComponent);

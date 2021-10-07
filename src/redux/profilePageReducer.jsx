@@ -1,4 +1,3 @@
-import { Redirect } from "react-router";
 import { ProfileAPI } from "../api/api";
 
 const ADD_POST = "ADD-POST";
@@ -6,6 +5,7 @@ const UPDATE_TEXTAREA_VALUE = "UPDATE-TEXTAREA-VALUE";
 const TOGGLE_PRELOADER = "TOGGLE_PRELOADER";
 const SET_PROFILE = "SET_PROFILE";
 const SET_STATUS = "SET_STATUS";
+const SET_PHOTO = "SET_PHOTO";
 
 let initialState = {
     posts: [
@@ -27,7 +27,6 @@ let initialState = {
 };
 
 let profilePageReducer = (state = initialState, action) => {
-    let stateCopy = { ...state };
     switch (action.type) {
         case ADD_POST:
             return ({
@@ -59,6 +58,17 @@ let profilePageReducer = (state = initialState, action) => {
                 ...state,
                 status: action.status,
             };
+        case SET_PHOTO:
+            return {
+                ...state,
+                profile: {
+                    ...state.profile,
+                    photos: {
+                        small: action.photos.small,
+                        large: action.photos.large
+                    }
+                },
+            };
         default:
             return state;
     }
@@ -83,7 +93,10 @@ export const setStatusAC = (status) => ({
     type: SET_STATUS,
     status,
 });
-
+export const setPhoto = (response) => ({
+    type: SET_PHOTO,
+    photos: response.data.photos,
+});
 
 export const setProfile = (userId) => {
     return (dispatch)=>{
@@ -108,7 +121,13 @@ export const setStatus = (status) => {
     }
 }
 
-export const getStatus = (userId) => {
+export const updateStatus = (status) => {
+    return (dispatch)=>{
+        dispatch(setStatusAC(status));
+    }
+}
+
+export const queryStatus = (userId) => {
     return (dispatch)=>{
         ProfileAPI.getStatus(userId) 
             .then(result=>{
@@ -117,6 +136,22 @@ export const getStatus = (userId) => {
         });
     }
 }
-
+export const savePhoto = (file) => {    
+    return async (dispatch)=>{
+        let response = await ProfileAPI.setPhoto(file);                
+        dispatch(setPhoto(response));
+    }
+}
+export const saveProfile = (data) => { 
+    return async (dispatch, getState)=>{
+        const USER_ID = getState().auth.id;
+        if(data.file.length){
+            debugger;
+            dispatch(savePhoto(data.file[0]));
+        }
+        let responseProfile = await ProfileAPI.setProfile(data, USER_ID); 
+        dispatch(setProfile(USER_ID))
+    }
+}
 
 export default profilePageReducer;

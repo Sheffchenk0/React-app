@@ -3,7 +3,7 @@ import styles from './message.module.css';
 
 export default function message(props) {
     let owner = '';
-    if(props.message.isOwn == 1){
+    if(props.message.isOwn === 1){
         owner = ' ' + styles.own;
     }
     return(

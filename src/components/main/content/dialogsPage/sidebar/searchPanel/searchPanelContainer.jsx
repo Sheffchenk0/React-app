@@ -1,7 +1,6 @@
-import React from "react";
 import { connect } from "react-redux";
 import { updateSearchDialogValueActionCreator } from "../../../../../../redux/dialogsPageReducer";
-import SeacrhPanel from "./seacrhPanel";
+import SeacrhPanel from "./SearchPanel";
 
 let mapStateToProps = (state) => {
   return ({

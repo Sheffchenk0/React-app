@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./searchPanel.module.css";
 
-export default (props) => {
+const SearchPanel = (props) => {
   let onUpdateSearchDialogValue = (event) => {
     props.updateSearchDialogValue(event.target.value);
   };
@@ -24,3 +24,4 @@ export default (props) => {
     </div>
   );
 };
+export default SearchPanel;

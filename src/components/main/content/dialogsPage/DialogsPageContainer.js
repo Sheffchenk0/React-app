@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import { addMessageAC, updateCurrentDialogIdAC, updateInputValueAC, updateSearchDialogValueAC } from '../../../../redux/dialogsPageReducer';
 import DialogsPage from './dialogsPage';

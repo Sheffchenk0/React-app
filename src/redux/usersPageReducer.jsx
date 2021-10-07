@@ -11,6 +11,7 @@ let initialState = {
     users: [],
     totalUsersCount: 0,
     pageSize: 6,
+    pageBlockSize: 7,
     currentPage: 1,
     isFetching: false,
     disabled: [],
