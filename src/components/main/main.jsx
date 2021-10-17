@@ -7,6 +7,7 @@ const DialogsPageContainer = React.lazy(()=>import('./content/dialogsPage/Dialog
 const ProfilePageContainer = React.lazy(()=>import('./content/profilePage/ProfilePageContainer'));
 const UsersPageContainer = React.lazy(()=>import('./content/UsersPage/UsersPageContainer'));
 const LoginPage = React.lazy(()=>import('./content/loginPage/LoginPage'));
+const SettingsPage = React.lazy(()=>import('./content/settingsPage/SettingsPage'));
 export default function Main(props) {
     return (
             <div className={styles.main}>
@@ -17,7 +18,8 @@ export default function Main(props) {
                         <Route path="/dialogs" render={()=><DialogsPageContainer/>}/>
                         <Route path="/profile/:userId?" render={()=><ProfilePageContainer/>}/>
                         <Route path="/users" render={()=><UsersPageContainer/>}/>
-                        <Route path="/login" render={() => <LoginPage />} />                                                
+                        <Route path="/login" render={() => <LoginPage />} />    
+                        <Route path="/settings" render={() => <SettingsPage />} />                                            
                         <Route path="*" render={() => <LoginPage />} />
                     </Switch>
                 </Suspense>
